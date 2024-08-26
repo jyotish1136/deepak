@@ -17,7 +17,7 @@ document.getElementById("surpriseButton").onclick = function () {
 
 function startFlowerShower() {
     const flowerShower = document.getElementById('flowerShower');
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 10; i++) {
         const flower = document.createElement('div');
         flower.className = 'flower';
         flower.style.left = `${Math.random() * 200}%`;
