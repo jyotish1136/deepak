@@ -1,0 +1,233 @@
+/* General Styling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  visibility: hidden; /* Hide the main content initially */
+}
+
+.birthday-message {
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.birthday-message h1 {
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000000;
+  animation: colorChange 5s infinite;
+}
+
+.birthday-message p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.animated-name {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 4rem;
+  color: #ff1493;
+}
+
+.animated-name span {
+  animation: bounce 1s ease infinite;
+}
+
+.animated-name span:nth-child(1) {
+  animation-delay: 0s;
+}
+.animated-name span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animated-name span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.animated-name span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.animated-name span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff69b4;
+  }
+  25% {
+    color: #ff1493;
+  }
+  50% {
+    color: #ff69b4;
+  }
+  75% {
+    color: #ff1493;
+  }
+  100% {
+    color: #ff69b4;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #ff5f6d, #ffc371);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 2s ease-in-out;
+  transform: translateY(0);
+  text-align: center;
+}
+
+.curtain-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.curtain-content button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #333;
+  background: #ff69b4;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.curtain-content button:hover {
+  background: #ff1493;
+}
+.dp {
+  width: 200px;
+  height: auto;
+}
+/* Flower Shower */
+#flowerShower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.flower {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: url("flower.png") no-repeat center center/cover;
+  opacity: 1;
+  animation: fall linear infinite;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .birthday-message h1 {
+    font-size: 2.5rem;
+  }
+
+  .birthday-message p {
+    font-size: 1rem;
+  }
+
+  .animated-name {
+    font-size: 3rem;
+  }
+
+  .curtain-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .curtain-content button {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .birthday-message h1 {
+    font-size: 2rem;
+  }
+
+  .birthday-message p {
+    font-size: 0.9rem;
+  }
+
+  .animated-name {
+    font-size: 2.5rem;
+  }
+
+  .curtain-content h1 {
+    font-size: 2rem;
+  }
+
+  .curtain-content button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+  100% {
+    top: 110%;
+    opacity: 0.5;
+    transform: translateX(100px);
+  }
+}
