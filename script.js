@@ -20,7 +20,7 @@ function startFlowerShower() {
     for (let i = 0; i < 50; i++) {
         const flower = document.createElement('div');
         flower.className = 'flower';
-        flower.style.left = `${Math.random() * 100}%`;
+        flower.style.left = `${Math.random() * 200}%`;
         flower.style.animationDuration = `${Math.random() * 3 + 2}s`;
         flower.style.animationDelay = `${Math.random() * 5}s`;
         flowerShower.appendChild(flower);
